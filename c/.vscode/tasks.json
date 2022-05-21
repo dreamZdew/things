@@ -1,0 +1,33 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "exe\\${fileBasenameNoExtension}.exe",
+                "-finput-charset=UTF-8",    //输入编译器文本编码 默认为UTF-8
+                "-fexec-charset=GB18030",   //输出exe文件的编码
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ],
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared", 
+        "showReuseMessage": true,
+        "clear": false
+    }
+}
